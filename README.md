@@ -15,3 +15,5 @@ Teste para processo seletivo.
 - Modelos sendo exibidos por meio da API;
 - Utilização do Vue.Js com AXIOS para fazer as requisições;
 
+### v2.1
+- Criação do Github.Pages, pode ser acessado pelo link: https://lucaspmarra.github.io/navita-fipe-api/
