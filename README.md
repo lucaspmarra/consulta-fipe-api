@@ -1,12 +1,12 @@
 # Navita - Tabela FIPE
 
-Teste para processo seletivo.
+Teste para processo seletivo.  
+  
+## Controle de versão  
 
-## Controle de versão
+### v1   
+- Projeto iniciado utilizando framework css Boostrap;  
+- Utilização do Vue.Js juntamente com o Axios, para chamadas na API;  
 
-### v1 
-[] Projeto iniciado utilizando framework css Boostrap;
-[] Utilização do Vue.Js juntamente com o Axios, para chamadas na API;
-
-### v1.2
-[] Readme criado;
+### v1.2  
+- Readme criado;  
