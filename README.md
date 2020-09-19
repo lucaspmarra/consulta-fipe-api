@@ -10,3 +10,8 @@ Teste para processo seletivo.
 
 ### v1.2  
 - Readme criado;  
+
+### v2
+- Modelos sendo exibidos por meio da API;
+- Utilização do Vue.Js com AXIOS para fazer as requisições;
+
