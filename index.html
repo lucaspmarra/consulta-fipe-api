@@ -4,12 +4,49 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Navita - Tabela Fipe</title>
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/main_style.css" />
   </head>
   <body>
     <!-- table -->
-    <div>
-      
+    <div id="app">
+      <h1>Veículos</h1>
+      <section v-if="errored">
+        <p>
+          Pedimos desculpas, não estamos conseguindo recuperar as informações no
+          momento. Por favor, tente novamente mais tarde.
+        </p>
+      </section>
+      <section v-else>
+        <hr />
+        <div v-if="loading" uk-spinner></div>
+        <!-- return api data on html -->
+        <div class="container" v-else>
+          <div class="card d-flex" >
+            <div class="card-body">
+              <!-- table -->
+
+              <table class="table">
+                <thead class="thead-color">
+                  <tr>
+                    <th scope="col">Marcas</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody v-for="(nome, codigo) in models" :key="codigo">
+                  <tr>
+                    <td>{{nome.nome}}</td>
+                    <td>Ver modelos</td>
+                    <!-- <td>{{nome.codigo}}</td> -->
+                  </tr>
+                </tbody>
+              </table>
+
+              <!-- /table -->
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
     <!-- .table -->
     <!-- JS calls -->
@@ -19,6 +56,12 @@
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <!-- Boostrap JS-->
     <script src="./js/bootstrap.min.js"></script>
+    <!-- Vue JS-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <!-- AXIOS Js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <!-- main js file -->
+    <script src="./js/vue_instance.js"></script>
     <!-- JS calls -->
   </body>
 </html>
