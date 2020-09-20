@@ -20,3 +20,6 @@ Teste para processo seletivo.
 
 ### v2.2
 - Adicionado input de pesquisa (sem função ainda);
+
+### v2.3 
+- Adicionado <a> links para ver os modelos (sem função ainda);

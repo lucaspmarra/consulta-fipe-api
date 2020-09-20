@@ -21,11 +21,10 @@
         <hr />
         <div v-if="loading" uk-spinner></div>
         <!-- return api data on html -->
-        <div class="container" v-else>
+        <div class="container mb-3 mt-3" v-else>
           <div class="card d-flex">
             <div class="card-body">
               <!-- table -->
-
               <table class="table">
                 <thead class="thead-color">
                   <!-- search form -->
@@ -37,7 +36,6 @@
                         id="search-model"
                         type="text"
                         aria-describedby="modelHelpBlock"
-                        
                       />
                       <small id="modelHelpBlock" class="form-text text-muted">
                         Para facilidade de uso, por favor, digite o modelo
@@ -47,14 +45,15 @@
                   </div>
                   <!-- search form -->
                   <tr>
-                    <th scope="col">Marcas</th>
-                    <th></th>
+                    <th colspan="2" scope="col">Marcas</th>
                   </tr>
                 </thead>
                 <tbody v-for="(nome, codigo) in models" :key="codigo">
                   <tr>
                     <td>{{nome.nome}}</td>
-                    <td>Ver modelos</td>
+
+                    <td><a href="">Ver modelos</a></td>
+
                     <!-- <td>{{nome.codigo}}</td> -->
                   </tr>
                 </tbody>
