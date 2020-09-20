@@ -17,3 +17,6 @@ Teste para processo seletivo.
 
 ### v2.1
 - Criação do Github.Pages, pode ser acessado pelo link: https://lucaspmarra.github.io/navita-fipe-api/
+
+### v2.2
+- Adicionado input de pesquisa (sem função ainda);

@@ -5,6 +5,7 @@ new Vue({
       models: [],
       loading: true,
       errored: false,
+      
     };
   },
   mounted() {
@@ -24,6 +25,13 @@ new Vue({
           this.errored = true;
         })
         .finally(() => (this.loading = false));
+    },
+  },
+  computed: {
+    filteredModels: function () {
+      return this.models.filter((nome) => {
+        return nome.nome.match(this.search);
+      });
     },
   },
 });

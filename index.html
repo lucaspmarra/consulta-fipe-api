@@ -22,12 +22,30 @@
         <div v-if="loading" uk-spinner></div>
         <!-- return api data on html -->
         <div class="container" v-else>
-          <div class="card d-flex" >
+          <div class="card d-flex">
             <div class="card-body">
               <!-- table -->
 
               <table class="table">
                 <thead class="thead-color">
+                  <!-- search form -->
+                  <div class="d-flex justify-content-end thead-color">
+                    <div class="form-group mx-sm-3 mb-2">
+                      <label for="search-model">Digite o modelo:</label>
+                      <input
+                        class="form-control"
+                        id="search-model"
+                        type="text"
+                        aria-describedby="modelHelpBlock"
+                        
+                      />
+                      <small id="modelHelpBlock" class="form-text text-muted">
+                        Para facilidade de uso, por favor, digite o modelo
+                        desejo no campo acima.
+                      </small>
+                    </div>
+                  </div>
+                  <!-- search form -->
                   <tr>
                     <th scope="col">Marcas</th>
                     <th></th>
@@ -57,7 +75,7 @@
     <!-- Boostrap JS-->
     <script src="./js/bootstrap.min.js"></script>
     <!-- Vue JS-->
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <!-- AXIOS Js-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
     <!-- main js file -->
