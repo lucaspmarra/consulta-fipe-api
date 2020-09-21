@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Navita - Tabela Fipe</title>
-    <link rel="shortcut icon" href="https://navita.com.br/wp-content/uploads/2018/06/navita-favicon.png" type="image/x-icon">
+    <link
+      rel="shortcut icon"
+      href="https://navita.com.br/wp-content/uploads/2018/06/navita-favicon.png"
+      type="image/x-icon"
+    />
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
     <link rel="stylesheet" href="./css/main_style.css" />
   </head>
@@ -18,55 +22,61 @@
           momento. Por favor, tente novamente mais tarde.
         </p>
       </div>
-      <div class="container" v-else>
+      <!-- models card -->
+      <div v-else>
         <div v-if="loading" uk-spinner></div>
         <!-- return api data on html -->
         <div class="container mb-3 mt-3" v-else>
+          <!-- start card -->
           <div class="card d-flex">
+            <!-- start card body -->
             <div class="card-body">
-              <!-- card table models -->
+              <!-- start table -->
               <table class="table">
-                <!-- table -->
+                <!-- table head -->
                 <thead class="thead-color">
-                  <!-- search form -->
-                  <!-- <div class="d-flex justify-content-end thead-color">
-                    <div class="form-group mx-sm-3 mb-2">
-                      <label for="search-model">Digite o modelo:</label>
-                      <input
-                        class="form-control"
-                        id="search-model"
-                        type="text"
-                        aria-describedby="modelHelpBlock"
-                      />
-                      <small id="modelHelpBlock" class="form-text text-muted">
-                        Para facilidade de uso, por favor, digite o modelo
-                        desejo no campo acima.
-                      </small>
-                    </div>
-                  </div> -->
-                  <!-- search form -->
                   <tr>
                     <th colspan="2" scope="col">Marcas</th>
                   </tr>
                 </thead>
+                <!-- table head -->
                 <!-- table body -->
                 <tbody v-for="(model, index) in models" :key="index">
                   <tr>
-                    <td>{{model.nome}} - {{index}}</td>
+                    <td>{{model.nome}}</td>
                     <td><a href="">Ver modelos</a></td>
-                    <!-- <td>{{nome.codigo}}</td> -->
                   </tr>
                 </tbody>
-                <!-- /table body -->
+                <!-- table body -->
               </table>
-              <!-- /table -->
+              <!-- end table -->
             </div>
-            <!-- /card table models-->
+            <!-- end card body -->
+          </div>
+          <!-- start card -->
+        </div>
+      </div>
+      <!-- brands card -->
+      <div class="container mb-3 mt-3">
+        <div class="card d-flex">
+          <div class="card-body">
+            <table class="table">
+              <thead class="thead-color">
+                <tr>
+                  <th colspan="2" scope="col">Modelos</th>
+                </tr>
+              </thead>
+              <tbody v-for="(brand, index) in brands" :key="index">
+                <tr>
+                  <td>{{brand.nome}}</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
     </div>
-
+    <!-- brands card -->
     <!-- JS calls -->
     <!-- JQUery-->
     <script src="./js/jquery.js"></script>
