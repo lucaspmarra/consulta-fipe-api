@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Navita - Tabela Fipe</title>
+    <link rel="shortcut icon" href="https://navita.com.br/wp-content/uploads/2018/06/navita-favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
     <link rel="stylesheet" href="./css/main_style.css" />
   </head>
@@ -11,24 +12,24 @@
     <!-- table -->
     <div id="app">
       <h1>Veículos</h1>
-      <section v-if="errored">
+      <div class="container" v-if="errored">
         <p>
           Pedimos desculpas, não estamos conseguindo recuperar as informações no
           momento. Por favor, tente novamente mais tarde.
         </p>
-      </section>
-      <section v-else>
-        <hr />
+      </div>
+      <div class="container" v-else>
         <div v-if="loading" uk-spinner></div>
         <!-- return api data on html -->
         <div class="container mb-3 mt-3" v-else>
           <div class="card d-flex">
             <div class="card-body">
-              <!-- table -->
+              <!-- card table models -->
               <table class="table">
+                <!-- table -->
                 <thead class="thead-color">
                   <!-- search form -->
-                  <div class="d-flex justify-content-end thead-color">
+                  <!-- <div class="d-flex justify-content-end thead-color">
                     <div class="form-group mx-sm-3 mb-2">
                       <label for="search-model">Digite o modelo:</label>
                       <input
@@ -42,30 +43,30 @@
                         desejo no campo acima.
                       </small>
                     </div>
-                  </div>
+                  </div> -->
                   <!-- search form -->
                   <tr>
                     <th colspan="2" scope="col">Marcas</th>
                   </tr>
                 </thead>
-                <tbody v-for="(nome, codigo) in models" :key="codigo">
+                <!-- table body -->
+                <tbody v-for="(model, index) in models" :key="index">
                   <tr>
-                    <td>{{nome.nome}}</td>
-
+                    <td>{{model.nome}} - {{index}}</td>
                     <td><a href="">Ver modelos</a></td>
-
                     <!-- <td>{{nome.codigo}}</td> -->
                   </tr>
                 </tbody>
+                <!-- /table body -->
               </table>
-
               <!-- /table -->
             </div>
+            <!-- /card table models-->
           </div>
         </div>
-      </section>
+      </div>
     </div>
-    <!-- .table -->
+
     <!-- JS calls -->
     <!-- JQUery-->
     <script src="./js/jquery.js"></script>

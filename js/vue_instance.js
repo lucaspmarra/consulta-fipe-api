@@ -27,11 +27,5 @@ new Vue({
         .finally(() => (this.loading = false));
     },
   },
-  computed: {
-    filteredModels: function () {
-      return this.models.filter((nome) => {
-        return nome.nome.match(this.search);
-      });
-    },
-  },
+
 });

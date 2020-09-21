@@ -23,3 +23,8 @@ Teste para processo seletivo.
 
 ### v2.3 
 - Adicionado <a> links para ver os modelos (sem função ainda);
+
+### v2.4
+- Adicionado favicon da Navita;
+- Utilização de boas práticas no v-for;
+- Remoção do input de pesquisa;
