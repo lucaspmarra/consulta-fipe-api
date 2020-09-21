@@ -28,3 +28,15 @@ Teste para processo seletivo.
 - Adicionado favicon da Navita;
 - Utilização de boas práticas no v-for;
 - Remoção do input de pesquisa;
+
+### v2.5
+- Atualização de tecnologias usadas no readme;
+
+## Tecnologias usadas
+
+- HTML;
+- CSS;
+- SASS;
+- Vue.Js;
+- Axios;
+- Bootstrap;
