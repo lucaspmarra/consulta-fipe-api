@@ -45,6 +45,10 @@ Teste para processo seletivo.
 - Segunda chamada AXIOS realizada, agora retornando os modelos da marca com código 59, com finalidade de testes;
 - Dados sendo exibidos na tela;
 
+### v3.1
+
+- Adicionado Modal com os Modelos do código 59;
+
 ## Tecnologias usadas
 
 - HTML;

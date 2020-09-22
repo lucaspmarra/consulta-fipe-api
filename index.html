@@ -44,7 +44,11 @@
                 <tbody v-for="(model, index) in models" :key="index">
                   <tr>
                     <td>{{model.nome}}</td>
-                    <td><a href="">Ver modelos</a></td>
+                    <td>
+                      <a data-toggle="modal" data-target="#brandModal" href=""
+                        >Ver modelos</a
+                      >
+                    </td>
                   </tr>
                 </tbody>
                 <!-- table body -->
@@ -56,27 +60,50 @@
           <!-- start card -->
         </div>
       </div>
-      <!-- brands card -->
-      <div class="container mb-3 mt-3">
-        <div class="card d-flex">
-          <div class="card-body">
-            <table class="table">
-              <thead class="thead-color">
-                <tr>
-                  <th colspan="2" scope="col">Modelos</th>
-                </tr>
-              </thead>
-              <tbody v-for="(brand, index) in brands" :key="index">
-                <tr>
-                  <td>{{brand.nome}}</td>
-                </tr>
-              </tbody>
-            </table>
+
+      <!-- BRANDS MODAL -->
+      <div
+        class="modal fade"
+        id="brandModal"
+        tabindex="-1"
+        aria-labelledby="brandModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="brandModalLabel">Modelos</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div
+              class="modal-body"
+              v-for="(brand, index) in brands"
+              :key="index"
+            >
+              {{brand.nome}}
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Fechar
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- brands card -->
+    <!-- /BRANDS MODAL -->
+
     <!-- JS calls -->
     <!-- JQUery-->
     <script src="./js/jquery.js"></script>
