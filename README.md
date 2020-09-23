@@ -65,6 +65,10 @@ Teste para processo seletivo.
 - Pequenas alterações no layout final;
 - Texto de Considerações Finais;
 
+### v5.2
+
+-Alteração no caption;
+
 ## Tecnologias usadas
 
 - HTML;
