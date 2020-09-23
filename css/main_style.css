@@ -11,6 +11,14 @@ body {
   color: #4e73df;
 }
 
+.modal-header {
+  background-color: #f8f9fc;
+}
+
+.modal-header .modal-title {
+  color: #4e73df;
+}
+
 .card {
   -webkit-box-shadow: 0 0 20px 5px rgba(58, 59, 69, 0.15);
           box-shadow: 0 0 20px 5px rgba(58, 59, 69, 0.15);

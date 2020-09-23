@@ -60,6 +60,9 @@ Teste para processo seletivo.
 - Estilo aplicado;
 - Alterações no layout base para melhor acessibilidade do usuário, como por exemplo, o Help-text de uso;
 
+### v5.1
+- Pequenas alterações no layout final;
+
 ## Tecnologias usadas
 
 - HTML;
