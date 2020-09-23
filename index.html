@@ -13,39 +13,61 @@
     <link rel="stylesheet" href="./css/main_style.css" />
   </head>
   <body>
-    <!-- table -->
+    <!-- Nabvar -->
+    <nav
+      class="navbar navita-navbar"
+      style="
+        background-color: #ffffff;
+        box-shadow: 0 0 20px 0 rgba(58, 59, 69, 0.15);
+      "
+    >
+      <span class="navbar-brand mb-0 h1">Navita</span>
+    </nav>
+    <!-- /Nabvar -->
+    <!-- error message if something is wrong-->
     <div class="container-fluid" id="app">
-      <h1>Veículos</h1>
       <div class="container" v-if="errored">
         <p>
           Pedimos desculpas, não estamos conseguindo recuperar as informações no
           momento. Por favor, tente novamente mais tarde.
         </p>
       </div>
-      <!-- models card -->
+      <!-- Models card -->
       <div v-else>
         <div v-if="loading" uk-spinner></div>
-        <!-- return api data on html -->
+
         <div class="container mb-3 mt-3" v-else>
+          <h2 class="mb-3">Veículos</h2>
+
           <!-- start card -->
+
           <div class="card d-flex">
+            <div class="card-header thead-color">
+              <h4>Marcas</h4>
+              <small id="passwordHelpBlock" class="form-text text-muted">
+                Selecione "Ver modelos" para proceder ao uso.
+              </small>
+            </div>
+
             <!-- start card body -->
             <div class="card-body">
               <!-- start table -->
-              <table class="table">
+              <table class="table table-hover">
                 <!-- table head -->
-                <thead class="thead-color">
+                <thead>
                   <tr>
                     <th colspan="2" scope="col">Marcas</th>
                   </tr>
                 </thead>
                 <!-- table head -->
                 <!-- table body -->
+                <!-- return api data on html -->
                 <tbody v-for="(brand, index) in brands" :key="index">
                   <tr>
                     <td>{{brand.nome}}</td>
                     <td>
                       <a
+                        class="navita-button"
                         @click="brandSelected(brand)"
                         data-toggle="modal"
                         data-target="#modelsModal"
@@ -61,10 +83,13 @@
             <!-- end card body -->
           </div>
           <!-- start card -->
+          <caption>
+            Lista de Modelos
+          </caption>
         </div>
       </div>
-
-      <!-- BRANDS MODAL -->
+      <!-- /Brands card-->
+      <!-- Models modal -->
       <div
         class="modal fade"
         id="modelsModal"
@@ -75,7 +100,9 @@
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="modelsModalLabel">Modelos</h5>
+              <h5 class="modal-title thead-color" id="modelsModalLabel">
+                Modelos
+              </h5>
               <button
                 type="button"
                 class="close"
@@ -105,7 +132,7 @@
         </div>
       </div>
     </div>
-    <!-- /BRANDS MODAL -->
+    <!-- /Models modal -->
 
     <!-- JS calls -->
     <!-- JQUery-->

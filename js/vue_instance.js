@@ -15,29 +15,27 @@ new Vue({
     this.getBrands();
   },
   methods: {
-    async getBrands () {
-      this.loading = true
-      this.errored = false
-      try {
-        const { data } = await axios.get(API_URL)
-        this.brands = data
-      } catch (err) {
-        console.error(err)
-        this.errored = true
-      }
-      this.loading = false
+    async getBrands() {
+      await axios
+        .get(API_URL)
+        .then((response) => {
+          this.brands = response.data;
+          console.log(response.data);
+        })
+        .finally(() => (this.loading = false));
     },
-    async getModels (brandCode) {
-      this.models = []
-      const { data } = await axios.get(`${API_URL}/${encodeURIComponent(brandCode)}/modelos`)
-      this.models = data.modelos
+    async getModels(brandCode) {
+      console.log("Loading brand models for brand code:", brandCode);
+      this.models = [];
+      const { data } = await axios.get(
+        `${API_URL}/${encodeURIComponent(brandCode)}/modelos`
+      );
+      this.models = data.modelos;
     },
-    brandSelected (brand) {
-      // store the selected brand
-      this.selectedBrand = brand
+    brandSelected(brand) {
+      this.selectedBrand = brand;
 
-      // load the brand's models
-      this.getModels(brand.codigo)
-    }
-  }
-})
+      this.getModels(brand.codigo);
+    },
+  },
+});

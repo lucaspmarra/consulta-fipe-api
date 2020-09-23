@@ -54,6 +54,12 @@ Teste para processo seletivo.
 -Teste com try catch;
 -Dados sendo retornados corretamente usando diretiva @click
 
+### v5
+
+- Chamadas funcionando;
+- Estilo aplicado;
+- Alterações no layout base para melhor acessibilidade do usuário, como por exemplo, o Help-text de uso;
+
 ## Tecnologias usadas
 
 - HTML;

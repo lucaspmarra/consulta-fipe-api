@@ -1,9 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 html,
 body {
-  background-color: #F7F8FB;
-  color: #5A5C69;
+  background-color: #f7f8fb;
+  color: #5a5c69;
+  font-family: "Roboto", sans-serif;
 }
 
 .thead-color {
-    background-color: #F8F9FC;
+  background-color: #f8f9fc;
+  color: #4e73df;
+}
+.card {
+  box-shadow: 0 0 20px 5px rgba(58, 59, 69, 0.15);
+  .card-body {
+    td {
+      color: #5a5c69;
+    }
+  }
+}
+a .navita-button {
+  color: #4e73df;
+  cursor: pointer;
 }
