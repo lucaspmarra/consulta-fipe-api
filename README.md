@@ -49,6 +49,11 @@ Teste para processo seletivo.
 
 - Adicionado Modal com os Modelos do código 59;
 
+### v4
+
+-Teste com try catch;
+-Dados sendo retornados corretamente usando diretiva @click
+
 ## Tecnologias usadas
 
 - HTML;

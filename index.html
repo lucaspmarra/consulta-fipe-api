@@ -14,7 +14,7 @@
   </head>
   <body>
     <!-- table -->
-    <div id="app">
+    <div class="container-fluid" id="app">
       <h1>Veículos</h1>
       <div class="container" v-if="errored">
         <p>
@@ -41,11 +41,14 @@
                 </thead>
                 <!-- table head -->
                 <!-- table body -->
-                <tbody v-for="(model, index) in models" :key="index">
+                <tbody v-for="(brand, index) in brands" :key="index">
                   <tr>
-                    <td>{{model.nome}}</td>
+                    <td>{{brand.nome}}</td>
                     <td>
-                      <a data-toggle="modal" data-target="#brandModal" href=""
+                      <a
+                        @click="brandSelected(brand)"
+                        data-toggle="modal"
+                        data-target="#modelsModal"
                         >Ver modelos</a
                       >
                     </td>
@@ -64,7 +67,7 @@
       <!-- BRANDS MODAL -->
       <div
         class="modal fade"
-        id="brandModal"
+        id="modelsModal"
         tabindex="-1"
         aria-labelledby="brandModalLabel"
         aria-hidden="true"
@@ -72,7 +75,7 @@
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="brandModalLabel">Modelos</h5>
+              <h5 class="modal-title" id="modelsModalLabel">Modelos</h5>
               <button
                 type="button"
                 class="close"
@@ -84,10 +87,10 @@
             </div>
             <div
               class="modal-body"
-              v-for="(brand, index) in brands"
+              v-for="(model, index) in models"
               :key="index"
             >
-              {{brand.nome}}
+              {{model.nome}}
             </div>
             <div class="modal-footer">
               <button

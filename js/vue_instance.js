@@ -1,41 +1,43 @@
 const API_URL = "https://parallelum.com.br/fipe/api/v1/carros/marcas";
-// api link const for global request
 new Vue({
   el: "#app",
   data() {
     return {
-      models: [],
       brands: [],
+      models: [],
+      selectedBrand: null,
       loading: true,
       errored: false,
     };
   },
   mounted() {
     this.getModels();
-    this.getBrand();
+    this.getBrands();
   },
-
   methods: {
-    async getModels() {
-      await axios
-        .get(API_URL)
-        .then((response) => {
-          this.models = response.data;
-          console.log(response.data);
-        })
-        .catch((error) => {
-          console.log(error);
-          this.errored = true;
-        })
-        .finally(() => (this.loading = false));
+    async getBrands () {
+      this.loading = true
+      this.errored = false
+      try {
+        const { data } = await axios.get(API_URL)
+        this.brands = data
+      } catch (err) {
+        console.error(err)
+        this.errored = true
+      }
+      this.loading = false
     },
-    getBrand() {
-      axios
-        .get("https://parallelum.com.br/fipe/api/v1/carros/marcas/59/modelos")
-        .then((response) => {
-          this.brands = response.data.modelos;
-          console.log(response.data.modelos);
-        });
+    async getModels (brandCode) {
+      this.models = []
+      const { data } = await axios.get(`${API_URL}/${encodeURIComponent(brandCode)}/modelos`)
+      this.models = data.modelos
     },
-  },
-});
+    brandSelected (brand) {
+      // store the selected brand
+      this.selectedBrand = brand
+
+      // load the brand's models
+      this.getModels(brand.codigo)
+    }
+  }
+})
