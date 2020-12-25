@@ -1,7 +1,3 @@
-# Navita - Tabela FIPE
-
-Teste para processo seletivo.
-
 ## Controle de versão
 
 ### v1
@@ -20,7 +16,7 @@ Teste para processo seletivo.
 
 ### v2.1
 
-- Criação do Github.Pages, pode ser acessado pelo link: https://lucaspmarra.github.io/navita-fipe-api/
+- Criação do Github.Pages, pode ser acessado pelo link: https://lucaspmarra.github.io/consulta-fipe-api/
 
 ### v2.2
 
@@ -77,11 +73,3 @@ Teste para processo seletivo.
 - Vue.Js;
 - Axios;
 - Bootstrap;
-
-## Considerações finais
-
-Um teste prático e direto, com liberdade para uso de framework UI livre, possibilitando melhor uso de tempo para as funcionalidades do Axios.  
-Alguns pontos a se observer em questão da UX, em uma tabela de 90 itens, obrigar o usuáruo a descer até o final da tabela para verificar os modelos da marca demanda muito tempo e acaba deixando o usuário instafisfeito.  
-Duas alternativas eram: Accordion e Modal.  
-Optei por Modal por conhecimentos técnicos, o accordion ainda não sei usar muito bem junto com o Vue.  
-Sendo assim, o usuário ao clicar na Marca, irá ver todos os Modelos na nova janela que irá se abrir em sua tela, sem necessidade de ter que descer até o final da página para visualizar a segunda table/card.
